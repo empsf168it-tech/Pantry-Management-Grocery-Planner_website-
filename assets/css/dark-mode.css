@@ -1,0 +1,189 @@
+/* Light Mode Theme for Pantry Management & Grocery Planner (Nordic Botanical & Citrus Palette) */
+
+body.light-theme {
+    --primary-bg: #F8F7F4;
+    --secondary-bg: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --primary-accent: #2A9D8F;
+    --secondary-accent: #264653;
+    --accent-citrus: #E76F51;
+    --accent-gold: #E9C46A;
+    --supporting-neutral: #DCE3E1;
+    --gradient-primary: linear-gradient(135deg, #264653, #2A9D8F);
+    --gradient-accent: linear-gradient(135deg, #E76F51, #F4A261);
+    --text-primary: #1A262B;
+    --text-secondary: #53666C;
+    --border-color: rgba(26, 38, 43, 0.08);
+    --glow-color: rgba(42, 157, 143, 0.2);
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+/* Navbar Light Theme */
+body.light-theme .navbar-custom {
+    background: rgba(248, 247, 244, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(26, 38, 43, 0.08);
+}
+
+body.light-theme .nav-link {
+    color: #53666C !important;
+}
+
+body.light-theme .nav-link:hover,
+body.light-theme .nav-link.active {
+    color: var(--primary-accent) !important;
+}
+
+body.light-theme .nav-link::after {
+    background-color: var(--primary-accent) !important;
+}
+
+body.light-theme .navbar-brand .text-white {
+    color: #1A262B !important;
+}
+
+/* Sections & Typography */
+body.light-theme .bg-secondary-bg {
+    background-color: #FFFFFF;
+}
+
+body.light-theme .text-secondary {
+    color: #53666C !important;
+}
+
+body.light-theme .text-white {
+    color: #1A262B !important;
+}
+
+body.light-theme .display-1,
+body.light-theme .display-2,
+body.light-theme .display-3,
+body.light-theme .display-4,
+body.light-theme .display-5,
+body.light-theme .display-6,
+body.light-theme .h1,
+body.light-theme .h2,
+body.light-theme .h3,
+body.light-theme .h4,
+body.light-theme .h5,
+body.light-theme .h6,
+body.light-theme .section-title,
+body.light-theme .hero-title {
+    color: #1A262B;
+}
+
+body.light-theme .hero-ai-enhanced-badge {
+    background-color: var(--primary-accent) !important;
+    color: #F8F7F4 !important;
+}
+
+/* Cards */
+body.light-theme .glass-card {
+    background: #FFFFFF;
+    border-color: rgba(26, 38, 43, 0.08);
+    box-shadow: 0 10px 30px rgba(26, 38, 43, 0.05);
+}
+
+body.light-theme .glass-card:hover {
+    border-color: var(--primary-accent);
+    box-shadow: 0 15px 35px rgba(42, 157, 143, 0.18);
+}
+
+/* Tables */
+body.light-theme .table-dark {
+    --bs-table-bg: transparent;
+    color: #1A262B;
+}
+
+body.light-theme .table-glass tr td,
+body.light-theme .table-glass tr th {
+    background: #FFFFFF;
+    color: #1A262B;
+    border-bottom: 1px solid rgba(26, 38, 43, 0.08);
+}
+
+body.light-theme .table-glass th.text-secondary {
+    color: #53666C !important;
+}
+
+/* Form Controls */
+body.light-theme .form-control,
+body.light-theme .form-select {
+    border-color: rgba(26, 38, 43, 0.18) !important;
+    color: #1A262B !important;
+    background-color: #FFFFFF !important;
+}
+
+body.light-theme .form-control::placeholder {
+    color: #8A9A9F !important;
+}
+
+body.light-theme .input-group-text {
+    border-color: rgba(26, 38, 43, 0.18) !important;
+    color: #53666C !important;
+}
+
+/* Footer */
+body.light-theme footer {
+    border-top: 1px solid rgba(26, 38, 43, 0.08);
+}
+
+body.light-theme footer .text-secondary {
+    color: #53666C !important;
+}
+
+body.light-theme footer a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body.light-theme footer a:hover {
+    color: var(--primary-accent) !important;
+}
+
+body.light-theme footer .social-links a:hover {
+    transform: translateY(-5px);
+}
+
+body.light-theme .border-color {
+    border-color: rgba(26, 38, 43, 0.08) !important;
+}
+
+/* Navbar Toggler Fix */
+body.light-theme .navbar-toggler,
+body.light-theme .navbar-toggler i {
+    color: #1A262B !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Mobile/Tablet Menu Fix */
+@media (max-width: 1199.98px) {
+    body.light-theme .navbar-custom .navbar-collapse {
+        background: rgba(248, 247, 244, 0.98) !important;
+    }
+}
+
+/* Buttons */
+body.light-theme .btn-outline-custom {
+    color: #1A262B;
+    border-color: rgba(26, 38, 43, 0.18);
+}
+
+body.light-theme .btn-outline-custom:hover {
+    background: #E8EEEC;
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+}
+
+body.light-theme .btn-primary-custom {
+    background: var(--gradient-primary);
+    color: #F8F7F4;
+    box-shadow: 0 4px 15px rgba(38, 70, 83, 0.3);
+}
+
+body.light-theme .btn-primary-custom:hover {
+    box-shadow: 0 6px 20px rgba(42, 157, 143, 0.45);
+    color: #FFFFFF;
+}

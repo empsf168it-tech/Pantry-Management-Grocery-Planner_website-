@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans & Pricing | Pantri</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+    <meta name="description"
+        content="Choose a flexible Pantri plan for pantry inventory tracking, expiry alerts, and smart grocery shopping organization. Free starter and premium family plans.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <style>
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .pricing-plans-row .pricing-feature-list li {
+                display: grid !important;
+                grid-template-columns: 22px 1fr;
+                column-gap: 10px;
+                align-items: start !important;
+            }
+
+            .pricing-plans-row .pricing-feature-list li i {
+                margin-right: 0 !important;
+                margin-top: 2px;
+            }
+
+            .pricing-plans-row .pricing-feature-list li span {
+                display: block;
+            }
+        }
+
+        /* Reduce Excessive Spacing */
+        section.py-5 {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+        }
+        section.mt-5 {
+            margin-top: 2rem !important;
+        }
+        .container.pt-5, .container.py-5 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .mb-5 {
+            margin-bottom: 1.75rem !important;
+        }
+
+        /* Dark Mode Text Contrast Fix */
+        body:not(.light-theme) .text-secondary {
+            color: #b8c0d4 !important;
+        }
+        body:not(.light-theme) .badge.bg-primary-accent.text-dark {
+            color: #121E24 !important;
+        }
+        
+        body:not(.light-theme) .visa-logo {
+            filter: brightness(0) invert(1);
+        }
+
+        @media (width: 1024px) {
+            section.bg-secondary-bg .row.g-4 > .col-sm-6 {
+                display: flex;
+            }
+
+            section.bg-secondary-bg .row.g-4 > .col-sm-6 > .glass-card {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.svg" alt="Pantri Logo" class="me-2" style="height: 32px; width: 32px;">
+                <span class="fw-bold text-white fs-4">Pan<span class="text-gradient">tri</span></span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Features</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="theme-toggle" title="Toggle Theme">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <button class="btn btn-outline-custom btn-sm d-flex align-items-center justify-content-center nav-toggle-btn" id="rtl-toggle" title="RTL">
+                            RTL
+                        </button>
+                    </div>
+                    <a href="pricing.html" class="btn btn-primary-custom btn-sm d-flex align-items-center" title="Start Planning">
+                        Start Planning
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Hero -->
+    <section class="py-5 mt-5">
+        <div class="container pt-5">
+            <div class="text-center mb-5">
+                <h1 class="display-3 fw-bold mb-4">Plans Built for <br> <span class="text-gradient">Every Household</span>
+                </h1>
+                <p class="text-secondary lead max-w-600 mx-auto mb-4 px-3">Choose a flexible pantry and grocery management plan. Stay organized, save on food costs, and prevent kitchen waste.</p>
+                <div class="d-flex justify-content-center align-items-center gap-3 mb-5">
+                    <span class="text-white">Monthly Billing</span>
+                    <div class="form-check form-switch p-0 m-0" style="width: 50px; height: 24px;">
+                        <input class="form-check-input ms-0 m-0 w-100 h-100" type="checkbox" id="billingSwitch" style="cursor: pointer;"
+                            checked>
+                    </div>
+                    <span class="text-secondary">Annual Billing <span class="badge bg-primary-accent text-dark ms-2">Save 20%</span></span>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center pricing-plans-row">
+                <!-- Starter Plan -->
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 d-flex flex-column">
+                        <div style="height: 40px;" class="mb-4"></div> <!-- Badge Spacer -->
+                        <h3 class="h5 text-white mb-4">Starter Plan</h3>
+                        <div class="display-4 fw-bold mb-4 text-white">$<span class="price-val" data-weekly="0" data-monthly="0">0</span> <span class="fs-6 text-secondary fw-normal price-period">/mo</span></div>
+                        <p class="text-secondary text-sm mb-4">Essential pantry tracking for individuals.</p>
+                        <hr class="border-color mb-5">
+                        <ul class="list-unstyled text-start mb-5 pricing-feature-list">
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>1 Main Pantry Location</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Up to 100 Tracked Items</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Standard Grocery Lists</span>
+                            </li>
+                            <li class="mb-3 text-secondary d-flex align-items-center"><i
+                                    class="bi bi-dash-circle me-2"></i><span>No Multi-User Family Sync</span></li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="index.html" class="btn btn-outline-custom w-100">Get Started Free</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Plan -->
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 border-primary-accent d-flex flex-column"
+                        style="box-shadow: 0 0 40px rgba(42, 157, 143, 0.2);">
+                        <div class="text-center mb-4" style="height: 40px;">
+                            <div class="badge px-3 py-2 fw-semibold" style="background-color: var(--primary-accent); color: #121E24; letter-spacing: 0.05em;">MOST POPULAR</div>
+                        </div>
+                        <h3 class="h5 text-white mb-4">Family Plan</h3>
+                        <div class="display-4 fw-bold mb-4 text-white">$<span class="price-val" data-weekly="9" data-monthly="7">9</span> <span class="fs-6 text-secondary fw-normal price-period">/mo</span>
+                        </div>
+                        <p class="text-secondary text-sm mb-4">Complete organization for active homes.</p>
+                        <hr class="border-color mb-5">
+                        <ul class="list-unstyled text-start mb-5 pricing-feature-list">
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Unlimited Pantry Locations</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Smart Expiry & Restock Alerts</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Aisle-Sorted Grocery Lists</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Multi-User Real-Time Sync</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Barcode & Item Scanner</span></li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="contact.html" class="btn btn-primary-custom w-100">Start 14-Day Free Trial</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Household Pro -->
+                <div class="col-lg-4">
+                    <div class="glass-card p-5 h-100 d-flex flex-column">
+                        <div style="height: 40px;" class="mb-4"></div> <!-- Badge Spacer -->
+                        <h3 class="h5 text-white mb-4">Household Pro</h3>
+                        <div class="display-4 fw-bold mb-4 text-white">$<span class="price-val" data-weekly="15" data-monthly="12">15</span> <span class="fs-6 text-secondary fw-normal price-period">/mo</span></div>
+                        <p class="text-secondary text-sm mb-4">For large households & gourmet kitchens.</p>
+                        <hr class="border-color mb-5">
+                        <ul class="list-unstyled text-start mb-5 pricing-feature-list">
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Multi-Fridge & Deep Freezer Zones</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Recipe & Meal Plan Integration</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Supermarket Price Tracker</span>
+                            </li>
+                            <li class="mb-3 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-primary-accent me-2"></i><span>Priority Household Support</span></li>
+                        </ul>
+                        <div class="mt-auto">
+                            <a href="contact.html" class="btn btn-outline-custom w-100">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support & Inspiration Section -->
+    <section class="py-5 bg-secondary-bg">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5 mb-4">Dedicated <span class="text-gradient">Support & Kitchen Guides</span></h2>
+                    <p class="text-secondary lead">Whether you are organizing your first pantry or managing multiple freezers, our team and organization guides are here to ensure your kitchen stays effortlessly organized.</p>
+                    <ul class="list-unstyled mt-5">
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-check2-circle text-primary-accent me-3 fs-5"></i>
+                            <span>Weekly pantry organization tutorials and meal planning tips</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <i class="bi bi-check2-circle text-primary-accent me-3 fs-5"></i>
+                            <span>One-on-one setup guidance for large and multi-zone kitchens</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="glass-card p-4 text-center">
+                                <i class="bi bi-chat-text text-primary-accent fs-1 mb-3 d-block"></i>
+                                <h4 class="h5">Meal Prep Tips</h4>
+                                <p class="text-secondary text-sm mb-0">Learn how to cook smartly with existing pantry ingredients.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="glass-card p-4 text-center">
+                                <i class="bi bi-journal-text text-primary-accent fs-1 mb-3 d-block"></i>
+                                <h4 class="h5">Shelf Guides</h4>
+                                <p class="text-secondary text-sm mb-0">Storage temperature and jar labeling best practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Confidence Section -->
+    <section class="py-5">
+        <div class="container py-5 text-center">
+            <div class="glass-card p-5 max-w-600 mx-auto">
+                <div class="mb-4">
+                    <i class="bi bi-shield-lock-fill text-primary-accent display-4"></i>
+                </div>
+                <h3 class="h2 mb-3">Secure & Risk-Free Guarantee</h3>
+                <p class="text-secondary mb-4">All paid plans include a 14-day risk-free trial and cancel-anytime policy. We partner with industry-standard payment processors to keep your data protected.</p>
+                <div class="d-flex justify-content-center align-items-center gap-5 opacity-75 grayscale-hover">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
+                        height="25" alt="Stripe">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" height="25" alt="PayPal">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='24' viewBox='0 0 72 24'%3E%3Ctext x='0' y='18' font-family='Arial, Helvetica, sans-serif' font-size='18' font-weight='700' fill='%231A1F71'%3EVISA%3C/text%3E%3C/svg%3E"
+                        height="20" alt="Visa" class="visa-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 mt-5">
+        <div class="container py-5">
+            <h2 class="display-5 text-center mb-5">Frequently Asked Questions</h2>
+            <div class="accordion max-w-600 mx-auto" id="pricingFaqAccordion">
+                <div class="accordion-item glass-card mb-3 border-color">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-transparent text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="false"
+                            aria-controls="faqOne">
+                            How does pantry inventory tracking work?
+                        </button>
+                    </h2>
+                    <div id="faqOne" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body text-secondary">
+                            You can log items into organized categories like Grains, Dairy, Produce, and Spices using our quick-search or barcode scanner. As you prepare meals, update quantities with one tap to keep real-time stock levels accurate.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item glass-card mb-3 border-color">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-transparent text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false"
+                            aria-controls="faqTwo">
+                            How do low stock and expiry alerts help save money?
+                        </button>
+                    </h2>
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body text-secondary">
+                            You set minimum threshold amounts and expiry dates for your items. The app notifies you when items are running low or near expiration, preventing emergency grocery runs and eliminating forgotten food spoilage.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item glass-card mb-3 border-color">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-transparent text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false"
+                            aria-controls="faqThree">
+                            Can multiple household members share the grocery list?
+                        </button>
+                    </h2>
+                    <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body text-secondary">
+                            Yes! Our Family and Household Pro plans feature real-time cloud sync. Anyone in your household can view what's currently in the pantry and add or check off grocery items while shopping simultaneously.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item glass-card border-color">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-transparent text-white" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false"
+                            aria-controls="faqFour">
+                            How does the grocery planner organize shopping lists?
+                        </button>
+                    </h2>
+                    <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#pricingFaqAccordion">
+                        <div class="accordion-body text-secondary">
+                            Lists are automatically arranged by supermarket aisles (Produce, Dairy, Bakery, Canned Goods, Spices, Household Essentials) so you can navigate stores swiftly without backtracking.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5 border-top border-color">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
+                        <img src="assets/images/logo.svg" alt="Pantri Logo" height="30" width="30" class="me-2">
+                        <span class="fw-bold text-white fs-4">Pan<span class="text-gradient">tri</span></span>
+                    </a>
+                    <p class="text-secondary">A modern, practical pantry management and grocery planning assistant designed to help households track kitchen essentials, reduce food waste, and organize shopping.</p>
+                    <div class="d-flex gap-3 fs-4 mt-4 social-links">
+                        <a href="#" class="text-secondary"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Pantry Categories</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><a href="services.html#categories" class="text-decoration-none text-secondary">Grains & Cereals</a></li>
+                        <li class="mb-2"><a href="services.html#categories" class="text-decoration-none text-secondary">Fruits & Vegetables</a></li>
+                        <li class="mb-2"><a href="services.html#categories" class="text-decoration-none text-secondary">Dairy & Eggs</a></li>
+                        <li class="mb-2"><a href="services.html#categories" class="text-decoration-none text-secondary">Baking Essentials</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-secondary">Home</a></li>
+                        <li class="mb-2"><a href="home2.html" class="text-decoration-none text-secondary">Home 2</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-decoration-none text-secondary">Features</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none text-secondary">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Stay Organized</h5>
+                    <div class="glass-card p-2 d-flex">
+                        <input type="email" class="form-control bg-transparent border-0 text-white shadow-none"
+                            placeholder="Enter your email">
+                        <button class="btn btn-primary-custom ms-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 pt-5 text-secondary border-top border-color">
+                <p>&copy; 2026 Pantri. Stay Organized. Shop Smarter. Waste Less.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
