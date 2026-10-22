@@ -590,11 +590,24 @@ h4, h5, h6, .h4, .h5, .h6 {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover .bg-primary-accent,
+.contact-info-card .bg-primary-accent:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 20px var(--glow-color);
 }
 
 .contact-info-card .bg-primary-accent i {
     line-height: 1;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.contact-info-card:hover .bg-primary-accent i,
+.contact-info-card .bg-primary-accent:hover i {
+    transform: scale(1.05);
 }
 
 @media (max-width: 991px) {
@@ -659,10 +672,16 @@ h4, h5, h6, .h4, .h5, .h6 {
 }
 
 /* Social Links Hover */
+.social-links a,
 footer .social-links a.text-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
 }
 
+.social-links a:hover,
+.social-links a.text-secondary:hover,
 footer .social-links a.text-secondary:hover {
     color: var(--primary-accent) !important;
     transform: translateY(-5px) !important;

@@ -42,7 +42,7 @@
             display: inline-block !important;
         }
 
-        @media (max-width: 991.98px) {
+        @media (max-width: 1199.98px) {
             html,
             body.home2-page {
                 width: 100%;
@@ -99,7 +99,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="home2.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -592,7 +592,7 @@
                     <h5 class="mb-4">Quick Links</h5>
                     <ul class="list-unstyled text-secondary">
                         <li class="mb-2"><a href="index.html" class="text-decoration-none text-secondary">Home</a></li>
-                        <li class="mb-2"><a href="home2.html" class="text-decoration-none text-secondary">Home 2</a></li>
+                        <li class="mb-2"><a href="home2.html" class="text-decoration-none text-secondary">About</a></li>
                         <li class="mb-2"><a href="services.html" class="text-decoration-none text-secondary">Features</a></li>
                         <li class="mb-2"><a href="pricing.html" class="text-decoration-none text-secondary">Pricing</a></li>
                         <li class="mb-2"><a href="contact.html" class="text-decoration-none text-secondary">Contact</a></li>
@@ -618,27 +618,56 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // Specific fix for Home 2 page to prevent html scrolling when menu is opened
+        // Specific fix for Home 2 page to manage scroll locking without breaking page scrolling
         document.addEventListener('DOMContentLoaded', function() {
             const navbarCollapse = document.getElementById('navbarNav');
+            
+            function unlockScroll() {
+                document.documentElement.style.removeProperty('overflow');
+                document.body.style.removeProperty('overflow');
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+            }
+
+            function lockScroll() {
+                document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+                document.body.style.setProperty('overflow', 'hidden', 'important');
+            }
+
+            // Immediately ensure scrolling is active
+            unlockScroll();
+
             if (navbarCollapse) {
-                navbarCollapse.addEventListener('show.bs.collapse', () => {
-                    document.documentElement.style.setProperty('overflow', 'hidden', 'important');
-                });
-                navbarCollapse.addEventListener('hidden.bs.collapse', () => {
-                    document.documentElement.style.overflow = '';
-                });
-                const navLinks = navbarCollapse.querySelectorAll('.nav-link');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (navbarCollapse.classList.contains('show')) {
-                            document.documentElement.style.overflow = '';
+                navbarCollapse.addEventListener('show.bs.collapse', lockScroll);
+                navbarCollapse.addEventListener('hide.bs.collapse', unlockScroll);
+                navbarCollapse.addEventListener('hidden.bs.collapse', unlockScroll);
+
+                // Handle clicks on any link or button inside the collapse menu
+                const interactiveItems = navbarCollapse.querySelectorAll('.nav-link, .btn, a, button');
+                interactiveItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        unlockScroll();
+                        if (typeof bootstrap !== 'undefined') {
+                            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                            if (bsCollapse && navbarCollapse.classList.contains('show')) {
+                                bsCollapse.hide();
+                            }
                         }
                     });
                 });
+
+                // Clear scroll lock on resize
                 window.addEventListener('resize', () => {
-                    if (window.innerWidth >= 1200 && document.documentElement.style.overflow === 'hidden') {
-                        document.documentElement.style.overflow = '';
+                    if (window.innerWidth >= 1200) {
+                        unlockScroll();
+                        if (typeof bootstrap !== 'undefined') {
+                            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                            if (bsCollapse && navbarCollapse.classList.contains('show')) {
+                                bsCollapse.hide();
+                            }
+                        }
+                    } else if (!navbarCollapse.classList.contains('show')) {
+                        unlockScroll();
                     }
                 });
             }

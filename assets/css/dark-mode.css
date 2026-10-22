@@ -133,16 +133,20 @@ body.light-theme footer .text-secondary {
     color: #53666C !important;
 }
 
+body.light-theme .social-links a,
 body.light-theme footer a {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
+body.light-theme .social-links a:hover,
+body.light-theme .social-links a.text-secondary:hover,
 body.light-theme footer a:hover {
     color: var(--primary-accent) !important;
 }
 
+body.light-theme .social-links a:hover,
 body.light-theme footer .social-links a:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) !important;
 }
 
 body.light-theme .border-color {
